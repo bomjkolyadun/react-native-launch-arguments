@@ -9,7 +9,9 @@ Pod::Spec.new do |s|
   s.homepage     = package["repository"]["baseUrl"]
   s.license      = { :type => package["license"], :file => "LICENSE" }
   s.authors      = { package["author"]["name"] => package["author"]["email"] }
-  s.platforms    = { :ios => "9.0" }
+  s.ios.deployment_target = '9.0'
+  s.tvos.deployment_target = '9.0'
+  s.osx.deployment_target = '10.13'
   s.source       = { :git => "#{package["repository"]["baseUrl"]}.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,swift}"
@@ -17,4 +19,3 @@ Pod::Spec.new do |s|
 
   s.dependency "React"
 end
-
