@@ -13,9 +13,8 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.0'
   s.osx.deployment_target = '10.13'
   s.source       = { :git => "#{package["repository"]["baseUrl"]}.git", :tag => "#{s.version}" }
-
+  s.preserve_paths = "**/*.js"
   s.source_files = "ios/**/*.{h,m,swift}"
   s.requires_arc = true
-
-  s.dependency "React"
+  s.dependency 'React-Core'
 end
