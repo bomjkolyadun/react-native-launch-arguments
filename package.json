@@ -3,10 +3,10 @@
   "title": "React Native Launch Arguments",
   "version": "2.1.0",
   "description": "React Native module for getting launch arguments",
-  "main": "dist/index.js",
+  "main": "dist/commonjs/index.js",
   "scripts": {
     "build": "tsc",
-    "install": "tsc"
+    "prepare": "bob build"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,30 @@
     "@types/react-native": "^0.62.5",
     "react": "^16.9.0",
     "react-native": "^0.62.2",
+    "react-native-builder-bob": "^0.18.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "react-native": "src/index.ts",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/src/index.d.ts",
+  "files": [
+    "src",
+    "dist",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "dist",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/"
+  ]
 }
