@@ -5,7 +5,8 @@
   "description": "React Native module for getting launch arguments",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "install": "tsc"
   },
   "repository": {
     "type": "git",
